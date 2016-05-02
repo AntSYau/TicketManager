@@ -41,4 +41,10 @@
         mainModule.listtickets(filmList.Text)
         manageTickets.Show()
     End Sub
+
+    Private Sub cosText_KeyDown(sender As Object, e As KeyEventArgs) Handles cosText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
 End Class
