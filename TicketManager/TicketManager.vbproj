@@ -11,11 +11,12 @@
     <AssemblyName>TicketManager</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -47,16 +48,20 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -72,11 +77,41 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="addFilmForm.Designer.vb">
+      <DependentUpon>addFilmForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addFilmForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="addTicket.Designer.vb">
+      <DependentUpon>addTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="filmdataDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>filmdataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="mainModule.vb" />
+    <Compile Include="manage.Designer.vb">
+      <DependentUpon>manage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manageTickets.Designer.vb">
+      <DependentUpon>manageTickets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manageTickets.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="startForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="startForm.Designer.vb">
+      <DependentUpon>startForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,6 +131,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addFilmForm.resx">
+      <DependentUpon>addFilmForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addTicket.resx">
+      <DependentUpon>addTicket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manage.resx">
+      <DependentUpon>manage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manageTickets.resx">
+      <DependentUpon>manageTickets.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="startForm.resx">
+      <DependentUpon>startForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -104,6 +154,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="filmdataDataSet.xsc">
+      <DependentUpon>filmdataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="filmdataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>filmdataDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="filmdataDataSet.xss">
+      <DependentUpon>filmdataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
