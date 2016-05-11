@@ -25,6 +25,7 @@ Partial Class manageFilmForm
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.deleteButton = New System.Windows.Forms.Button()
         Me.editButton = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListBox1
@@ -43,10 +44,10 @@ Partial Class manageFilmForm
         '
         'deleteButton
         '
-        Me.deleteButton.Location = New System.Drawing.Point(152, 14)
+        Me.deleteButton.Location = New System.Drawing.Point(128, 14)
         Me.deleteButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.deleteButton.Name = "deleteButton"
-        Me.deleteButton.Size = New System.Drawing.Size(124, 37)
+        Me.deleteButton.Size = New System.Drawing.Size(100, 37)
         Me.deleteButton.TabIndex = 3
         Me.deleteButton.Text = "删除 (&D)"
         Me.deleteButton.UseVisualStyleBackColor = True
@@ -56,16 +57,27 @@ Partial Class manageFilmForm
         Me.editButton.Location = New System.Drawing.Point(20, 14)
         Me.editButton.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.editButton.Name = "editButton"
-        Me.editButton.Size = New System.Drawing.Size(124, 37)
+        Me.editButton.Size = New System.Drawing.Size(100, 37)
         Me.editButton.TabIndex = 4
         Me.editButton.Text = "修改 (&E)"
         Me.editButton.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(236, 14)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 37)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "统计 (&M)"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'manageFilmForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 21.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(384, 276)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.editButton)
         Me.Controls.Add(Me.deleteButton)
         Me.Controls.Add(Me.ListBox1)
@@ -80,4 +92,5 @@ Partial Class manageFilmForm
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents deleteButton As Button
     Friend WithEvents editButton As Button
+    Friend WithEvents Button1 As Button
 End Class

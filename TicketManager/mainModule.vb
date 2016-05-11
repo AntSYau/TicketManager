@@ -123,5 +123,37 @@ Module mainModule
             MessageBox.Show(ex.Message.ToString)
         End Try
     End Sub
+
+    Public Sub consult()
+        startup()
+        Dim cn1 As New MySqlConnection
+        cn1 = New MySqlConnection(cnStr)
+        cn1.Open()
+        Dim sql As String = "select fName from filmName"
+        Dim fields(8) As String
+        fields = {"scenario", "perform", "camera", "process", "crosscut", "music", "prop", "costume"}
+        Dim cmd As New MySqlCommand(sql, cn)
+        Dim myreader As MySqlDataReader = cmd.ExecuteReader
+        Dim i As Integer = 0
+        Dim sql1 As String
+        Dim cmd1 As New MySqlCommand
+        Do While myreader.Read
+            ''sql1 = "insert into `filmStat`(filmName) values (" & myreader(0) & ""
+            cmd1 = New MySqlCommand(sql1, cn1)
+            excute(cmd1)
+            sql1 = "update `filmStat` set scenario = (select avg(scenario) from `" & myreader(0) & "`," &
+                "perform = (Select avg(perform) from `" & myreader(0) & "`)," &
+                "camera = (select avg(camera) from `" & myreader(0) & "`)," &
+                "process = (select avg(process) from `" & myreader(0) & "`)," &
+                "crosscut = (select avg(crosscut) from `" & myreader(0) & "`)," &
+                "music = (select avg(music) from `" & myreader(0) & "`)," &
+                "prop = (select avg(prop) from `" & myreader(0) & "`)," &
+                "costume = (select avg(costume) from `" & myreader(0) & "`) where filmName = '" & myreader(0) & "'"
+            cmd1 = New MySqlCommand(sql1, cn1)
+            excute(cmd1)
+        Loop
+        cn1.Close()
+        cn.Close()
+    End Sub
 End Module
 

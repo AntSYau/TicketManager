@@ -47,4 +47,52 @@
             Call Button1_Click(sender, e)
         End If
     End Sub
+
+    Private Sub sceText_KeyDown(sender As Object, e As KeyEventArgs) Handles sceText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub perText_KeyDown(sender As Object, e As KeyEventArgs) Handles perText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub camText_KeyDown(sender As Object, e As KeyEventArgs) Handles camText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub proText_KeyDown(sender As Object, e As KeyEventArgs) Handles proText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub croText_KeyDown(sender As Object, e As KeyEventArgs) Handles croText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub musText_KeyDown(sender As Object, e As KeyEventArgs) Handles musText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub propText_KeyDown(sender As Object, e As KeyEventArgs) Handles propText.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub filmList_KeyDown(sender As Object, e As KeyEventArgs) Handles filmList.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call Button1_Click(sender, e)
+        End If
+    End Sub
 End Class

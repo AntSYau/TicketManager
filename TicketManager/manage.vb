@@ -15,4 +15,8 @@ Public Class manageFilmForm
         MessageBox.Show("Please click [Add Film] from the start form, enter the " & vbCrLf _
                         & "exact film name and enter the currect information.", "Entry Closed", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        mainModule.consult()
+    End Sub
 End Class
